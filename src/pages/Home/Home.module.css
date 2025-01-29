@@ -1,0 +1,99 @@
+.contaneir {
+  background-image: url(../../assets/Background_Main.png);
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 60px;
+}
+
+.Homecard {
+  background-color: var(--pink);
+  padding: 2.5rem 2rem 3rem 3rem;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 28%;
+  border-radius: 10px;
+  position: absolute;
+  top: 60%;
+  right: 4%;
+  transform: translateY(-50%);
+}
+
+.titleCard {
+  color: var(--brown);
+  font-size: 50px;
+}
+
+.buttonHome {
+  background-color: var(--brown);
+  padding: 1rem 1rem 1rem 1rem;
+  width: 30%;
+}
+
+button {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  padding-left: 20%;
+}
+
+button a {
+  color: var(--white);
+  font-size: 18px;
+}
+
+.browse {
+  text-align: center;
+  margin-top: 50%;
+}
+
+.imageContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 95%;
+  object-fit: cover;
+  padding: 1rem;
+}
+
+.imageName {
+  font-size: 17px;
+  padding-bottom: 5rem;
+}
+
+
+.imageContainerproducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.imageCardproducts {
+  width: 20%;
+  height: 50%;
+}
+
+.imageProducts {
+  object-fit: cover;
+}
+
+.imageNameProducts {
+  font-size: 17px;
+  padding-left: 1rem;
+}
+
+.prodDesc {
+  text-align: justify;
+  padding-left: 1rem;
+  margin-top: -0.6rem;
+  font-weight: 500;
+  opacity: 0.6;
+}
