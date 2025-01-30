@@ -1,7 +1,12 @@
 
+
+import { Footer } from "../../components/Footer/Footer";
+
 export function Contact() {
   return (
-    <div>Contact</div>
+    <div>Contact <Footer /></div>
+
+    
 
 
   );

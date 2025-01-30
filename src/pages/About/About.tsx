@@ -1,7 +1,8 @@
+import { Footer } from "../../components/Footer/Footer";
 
 export function About() {
   return (
-    <div>About</div>
+    <div>About <Footer /></div>
 
 
   );

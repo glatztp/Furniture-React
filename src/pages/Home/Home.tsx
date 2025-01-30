@@ -1,21 +1,41 @@
 import style from "./Home.module.css";
-import image1 from "../../assets/Image-living room.svg";
-import image2 from "../../assets/Mask Group.svg";
-import image4 from "../../assets/image 4.svg";
 
-export function Home() {
-  const imgs = [
-    { name: "Dining", src: image1 },
-    { name: "Living", src: image2 },
-    { name: "Bedroom", src: image1 },
+import { Footer } from "../../components/Footer/Footer";
+import Category from '../../components/Category_card/Category';
+import Produto from '../../components/Produto/produto';
+
+import imageCardCategory1 from '../../assets/Mask Group.svg'
+
+interface Category {
+  name: string;
+  imageUrl: string;
+}
+
+interface Product {
+  name: string;
+  price: number;
+  imageUrl: string;
+  description: string;
+  BeforePrice?: number;
+}
+
+export const Home = () => {
+
+  const categories: Category[] = [
+    { name: "Dining", imageUrl: imageCardCategory1 },
+    { name: "Living", imageUrl: imageCardCategory1 },
+    { name: "Bedroom", imageUrl: imageCardCategory1 },
   ];
 
-  const products = [
-    { name: "Syltherine", src: image4 },
-    { name: "Syltherine", src: image4 },
-    { name: "Syltherine", src: image4 },
-    { name: "Syltherine", src: image4 },
-    
+  const products: Product[] = [
+    { name: "Product 1", description: "Some description", price: 10.99, BeforePrice: 30, imageUrl: imageCardCategory1 },
+    { name: "Product 2", description: "Some description", price: 40.99, imageUrl: imageCardCategory1 },
+    { name: "Product 3", description: "Some description", price: 40.99, imageUrl: imageCardCategory1 },
+    { name: "Product 4", description: "Some description", price: 40.99, BeforePrice: 80, imageUrl: imageCardCategory1 },
+    { name: "Product 5", description: "Some description", price: 40.99, imageUrl: imageCardCategory1 },
+    { name: "Product 6", description: "Some description", price: 40.99, imageUrl: imageCardCategory1 },
+    { name: "Product 7", description: "Some description", price: 40.99, imageUrl: imageCardCategory1 },
+    { name: "Product 8", description: "Some description", price: 40.99, imageUrl: imageCardCategory1 },
   ];
 
   return (
@@ -39,38 +59,43 @@ export function Home() {
         <h1>Browse The Range</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
+        {/* Categorias */}
         <div className={style.imageContainer}>
-          {imgs.map((img, index) => (
+          {categories.map((category, index) => (
             <div key={index} className={style.imageCard}>
               <img
-                src={img.src}
-                alt={`Image ${index + 1}`}
+                src={category.imageUrl}
+                alt={`Category ${index + 1}`}
                 className={style.image}
               />
-              <h1 className={style.imageName}>{img.name}</h1>
+              <h1 className={style.imageName}>{category.name}</h1>
             </div>
           ))}
         </div>
 
-        <div className={style.products}>
-          <h1>Our Products</h1>
+        {/* Produtos */}
+        <div className={style.our_products}>
+          <h1 className={style.title}>Our Products</h1>
 
-          <div className={style.imageContainerproducts}>
-            {products.map((img, index) => (
-              <div key={index} className={style.imageCardproducts}>
-                <img
-                  src={img.src}
-                  alt={`Image ${index + 1}`}
-                  className={style.imageProducts}
-                />
-                <h1 className={style.imageNameProducts}>{img.name}</h1>
-                <p className={style.prodDesc}>Stylish cafe chair</p>
-                <h1 className={style.imageNameProducts}>{img.name}</h1>
-              </div>
+          <div className={style.wrapper_products}>
+            {products.map((product, index) => (
+              <Produto
+                key={index}
+                imageUrl={product.imageUrl}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                BeforePrice={product.BeforePrice}
+              />
             ))}
           </div>
+
+          <a href="#" className={style.show_more}>Show More</a>
         </div>
+
       </div>
+
+      <Footer />
     </div>
   );
-}
+};

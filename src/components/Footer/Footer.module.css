@@ -1,0 +1,76 @@
+.footer {
+  display: flex;
+  padding-top: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-top: 1px solid #00000020;
+}
+
+.Items {
+  display: flex;
+  flex-direction: row;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.leftF {
+  padding-left: 3rem;
+}
+
+.ul {
+  list-style: none;
+  font-weight: 600;
+}
+
+.li {
+  padding: 1.2rem;
+}
+
+.loc {
+  padding: 5rem 5rem 2rem 0;
+  width: 50%;
+  opacity: 0.8;
+}
+
+.p {
+  opacity: 0.5;
+  padding: 1.2rem;
+}
+
+.pL {
+  opacity: 0.5;
+  padding: 1.2rem 0 0 0;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tt {
+  text-align: baseline;
+}
+
+.butli {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem 5rem 0 0;
+}
+
+.button {
+  font-weight: 700;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.r {
+  border-top: 1px solid #00000020;
+  padding: 1rem 0 3rem 3%;
+}
