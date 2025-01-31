@@ -5,6 +5,7 @@ import { Shop } from "./pages/Shop/Shop"
 import {Contact} from "./pages/Contact/Contact"
 import { Navbar } from "./components/Navbar/Navbar";
 
+
 export function App() {
 
   return (
