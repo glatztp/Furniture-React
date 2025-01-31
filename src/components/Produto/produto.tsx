@@ -1,44 +1,32 @@
 import React from "react";
-import style from './Produto.module.css'
+import style from './Produto.module.css';
 
-interface Produto {
+interface ProdutoProps {
   imageUrl: string;
-  name: string;
-  description: string;
-  price: number;
-  BeforePrice?:number;
+  imageCardName: string;  
+  imageCardDescription: string; 
+  imageCardPrice: number; 
+
 }
 
-const ProductCard: React.FC<Produto> = ({imageUrl, name, description, price, BeforePrice}) => {
-
-  const discountPercentage = BeforePrice
-    ? Math.round(((BeforePrice - price) / BeforePrice) * 100)
-    : 0;  
+const Produto: React.FC<ProdutoProps> = ({ imageUrl, imageCardName, imageCardDescription, imageCardPrice}) => {
 
   return (
-    <div className={style.containerProductCard}>
-      <div className={style.imageWrapper}>
-        <img src={imageUrl} alt="" />
-        {discountPercentage > 0 && (
-          <div className={style.discountStar}>
-              -{discountPercentage}%
-            </div>
-          )}
-      </div>
-      <div className={style.contentInfos}>
-        <h1>{name}</h1>
-        <p className={style.desc}>{description}</p>
+    <div className={style.produto}>
+      <div className={style.imgWrapper}>
+        <img src={imageUrl} alt={imageCardName} />
 
-        <div className={style.priceContainer}>
-          <p className={style.price}>R$ {price.toFixed(2)}</p>
-          {BeforePrice && (
-            <p className={style.beforePrice}>R$ {BeforePrice.toFixed(2)}</p>
-          )}
+      </div>
+      <div className={style.info}>
+        <h1>{imageCardName}</h1>
+        <p className={style.desc}>{imageCardDescription}</p>
+
+        <div className={style.priceWrapper}>
+          <p className={style.price}>R$ {imageCardPrice.toFixed(2)}</p>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default ProductCard;
+export default Produto;
