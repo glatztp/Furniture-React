@@ -1,6 +1,22 @@
 
 .price {
   font-weight: 800;
-  font-size: 22px;
+  font-size: 19px;
 }
 
+.h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #3A3A3A;
+
+}
+
+.info {
+  padding: 1rem 1rem 1rem 1rem;
+  color: #3A3A3A;
+}
+
+
+.produto {
+  background-color: rgb(246, 242, 242);
+}

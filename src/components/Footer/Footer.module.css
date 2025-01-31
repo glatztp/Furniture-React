@@ -21,14 +21,16 @@
 .ul {
   list-style: none;
   font-weight: 600;
+  padding-right: 0rem;
 }
 
 .li {
-  padding: 1.2rem;
+  padding: 1rem;
+  margin-right: 5rem;
 }
 
 .loc {
-  padding: 5rem 5rem 2rem 0;
+  padding: 5rem 0rem 2rem 0;
   width: 50%;
   opacity: 0.8;
 }
@@ -72,5 +74,12 @@ input {
 
 .r {
   border-top: 1px solid #00000020;
-  padding: 1rem 0 3rem 3%;
+  padding: 1rem 0 3rem 4%;
+}
+
+.h1 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: -2rem;
+  
 }

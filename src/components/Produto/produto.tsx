@@ -18,7 +18,7 @@ const Produto: React.FC<ProdutoProps> = ({ imageUrl, imageCardName, imageCardDes
 
       </div>
       <div className={style.info}>
-        <h1>{imageCardName}</h1>
+        <h1 className={style.h1}>{imageCardName}</h1>
         <p className={style.desc}>{imageCardDescription}</p>
 
         <div className={style.priceWrapper}>
