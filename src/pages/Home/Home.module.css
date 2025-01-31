@@ -1,3 +1,10 @@
+* {
+  font-family: "Poppins", serif;
+
+}
+
+
+
 .contaneir {
   background-image: url(../../assets/Background_Main.png);
   width: 100%;
@@ -10,12 +17,12 @@
 
 .Homecard {
   background-color: var(--pink);
-  padding: 1rem 2rem 0rem 3rem;
-  width: 25rem;
+  padding: 1.5rem 2rem 0rem 3rem;
+  width: 28rem;
   height: auto;
   border-radius: 1rem;
   position: absolute;
-  top: 60%;
+  top: 50%;
   right: 4%;
   transform: translateY(-40%);
   min-height: 26rem;
@@ -24,6 +31,7 @@
 .titleCard {
   color: var(--brown);
   font-size: 3.125rem;
+  font-weight: 700;
 }
 
 .buttonHome {
@@ -47,7 +55,8 @@ button a {
 
 .browse {
   text-align: center;
-  margin-top: 50%;
+  margin-top: 35%;
+  
 }
 
 .imageContainer {
@@ -59,8 +68,9 @@ button a {
 .image {
   width: 90%;
   object-fit: cover;
-  padding: 2rem 0rem 2rem 0rem;
-  flex: 1 1 30%;
+  padding: 2rem 0rem 2rem 3rem;
+  flex:30%;
+  margin-top: 3rem;
 }
 
 .imageName {
@@ -85,7 +95,7 @@ button a {
 .products .c_products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 5rem auto 0;
@@ -101,4 +111,19 @@ button a {
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 6rem;
+}
+
+.bt {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.imageName {
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+}
+
+.imageCard {
+  margin: -2.3rem;
 }
