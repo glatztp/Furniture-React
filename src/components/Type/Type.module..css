@@ -1,0 +1,16 @@
+.typeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.typeCard .typeImage {
+  width: 35rem;
+  height: 40rem;
+}
+
+.typeCard h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
