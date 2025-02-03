@@ -1,6 +1,8 @@
 import { Footer } from "../../components/Footer/Footer";
 import background from "../../assets/Group 69.svg";
-import AddressIcon from "../../assets/Vector 666.svg";
+import iconL from "../../assets/Vector 666.svg";
+import iconT from "../../assets/Vector 666.svg"
+import iconR from "../../assets/Vector 667.svg"
 
 export function Contact() {
   return (
@@ -17,19 +19,19 @@ export function Contact() {
       </div>
 
       <div className="my-28 flex justify-center">
-        <div className="flex flex-col items-center gap-28">
+        <div className="flex flex-col items-center gap-48">
           <div className="p-0">
-            <img src={AddressIcon} />
+            <img src={iconL} />
           </div>
-          <div className="p-0">
-            <img src={AddressIcon} />
+          <div className="-mt-6">
+            <img src={iconT} />
           </div>
-          <div className="p-0">
-            <img src={AddressIcon} />
+          <div className="-mt-12">
+            <img src={iconR} />
           </div>
         </div>
 
-        <div className="w-80 pr-40 space-y-4">
+        <div className="w-80 pr-10 space-y-4">
           <div className="p-4 r-80">
             <h2 className="text-2xl font-medium">Address</h2>
             <p className="text-lg">
