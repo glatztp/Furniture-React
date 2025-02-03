@@ -7,10 +7,7 @@ import Produto from "../../components/Produto/produto";
 import imagetype1 from "../../assets/Mask Group.svg";
 import imgP from "../../assets/image 4.svg";
 
-interface Type {
-  name: string;
-  imageUrl: string;
-}
+
 
 interface Produto1 {
   imageCardName: string;
@@ -19,6 +16,12 @@ interface Produto1 {
   imageUrl: string;
   BeforePrice?: number;
 }
+
+interface Type {
+  name: string;
+  imageUrl: string;
+}
+
 
 export const Home = () => {
   const type: Type[] = [
