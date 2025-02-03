@@ -10,23 +10,22 @@
 .Items {
   display: flex;
   flex-direction: row;
-  padding-right: 0;
-  padding-left: 0;
 }
 
 .leftF {
-  padding-left: 3rem;
+  padding-left: 3.1rem;  
 }
 
 .ul {
   list-style: none;
   font-weight: 600;
-  padding-right: 0rem;
+  padding-right: 4rem;
 }
 
 .li {
   padding: 1rem;
-  margin-right: 5rem;
+  margin-right: -4rem;
+  padding-right: 4rem;
 }
 
 .loc {
@@ -49,6 +48,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  
 }
 
 .tt {
@@ -58,7 +58,8 @@
 .butli {
   display: flex;
   flex-direction: row;
-  padding: 3rem 5rem 0 0;
+  padding: 2.51rem 0rem 0 0;
+  margin-left: -3rem;
 }
 
 .button {
