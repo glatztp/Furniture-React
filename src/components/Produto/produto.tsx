@@ -1,32 +1,50 @@
-import React from "react";
-import style from './Produto.module.css';
+import React, { useState } from "react";
+import style from "./Produto.module.css";
 
 interface ProdutoProps {
   imageUrl: string;
-  imageCardName: string;  
-  imageCardDescription: string; 
-  imageCardPrice: number; 
-
+  imageCardName: string;
+  imageCardDescription: string;
+  imageCardPrice: number;
 }
 
-const Produto: React.FC<ProdutoProps> = ({ imageUrl, imageCardName, imageCardDescription, imageCardPrice}) => {
+const Produto: React.FC<ProdutoProps> = ({
+  imageUrl,
+  imageCardName,
+  imageCardDescription,
+  imageCardPrice,
+}) => {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <div className={style.produto}>
-      <div className={style.imgWrapper}>
-        <img src={imageUrl} alt={imageCardName} />
-
+    <div
+      className={style.produto}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div
+        className={`${style.produtoImageContainer} ${
+          hovered ? style.hovered : ""
+        }`}
+      >
+        <img
+          src={imageUrl}
+          alt={imageCardName}
+          className={style.produtoImage}
+        />
+        {hovered && (
+          <div className={style.addToCartButton}>
+            <button>Add to Cart</button>
+          </div>
+        )}
       </div>
-      <div className={style.info}>
-        <h1 className={style.h1}>{imageCardName}</h1>
-        <p className={style.desc}>{imageCardDescription}</p>
-
-        <div className={style.priceWrapper}>
-          <p className={style.price}>R$ {imageCardPrice.toFixed(2)}</p>
-        </div>
+      <div className={style.produtoInfo}>
+        <h3 className={style.produtoName}>{imageCardName}</h3>
+        <p className={style.produtoDescription}>{imageCardDescription}</p>
+        <p className={style.produtoPrice}>Rp {imageCardPrice}</p>
       </div>
     </div>
   );
-}
+};
 
 export default Produto;
