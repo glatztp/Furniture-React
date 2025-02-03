@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Footer } from "../../components/Footer/Footer";
 import background from "../../assets/Group 78.svg";
 import nav from "../../assets/Group 57.svg";
