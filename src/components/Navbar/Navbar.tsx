@@ -44,7 +44,7 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="#">
+              <Link to="./Cart">
                 <img className={style.icon} src={icon4} alt="Icon"></img>
               </Link>
             </li>
