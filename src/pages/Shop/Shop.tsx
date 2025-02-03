@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Footer } from "../../components/Footer/Footer";
 import background from "../../assets/Group 78.svg";
 import nav from "../../assets/Group 57.svg";
@@ -15,58 +16,27 @@ interface Produto1 {
   BeforePrice?: number;
 }
 
-const produtos: Produto1[] = [
-  {
-    imageCardName: "Prod 1",
-    imageCardDescription: "Desc 1",
-    imageCardPrice: 20.99,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 2",
-    imageCardDescription: "Desc 2",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 3",
-    imageCardDescription: "Desc 3",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 4",
-    imageCardDescription: "Desc 4",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 5",
-    imageCardDescription: "Desc 5",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 6",
-    imageCardDescription: "Desc 6",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 7",
-    imageCardDescription: "Desc 7",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-  {
-    imageCardName: "Prod 8",
-    imageCardDescription: "Desc 8",
-    imageCardPrice: 29.9,
-    imageUrl: imgP,
-  },
-];
+const produtos: Produto1[] = Array.from({ length: 20 }, (_, index) => ({
+  imageCardName: `Prod ${index + 1}`,
+  imageCardDescription: `Desc ${index + 1}`,
+  imageCardPrice: 20 + (index % 5) * 5,
+  imageUrl: imgP,
+}));
 
 export function Shop() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 16;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = produtos.slice(indexOfFirstItem, indexOfLastItem);
+
+  const nextPage = () => {
+    if (currentPage < Math.ceil(produtos.length / itemsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div>
       <img className="w-12/12 object-cover " src={background} alt="" />
@@ -79,12 +49,16 @@ export function Shop() {
             <img src={nav3} />
 
             <div className="border-l border-solid pl-11 ml-5 text-2x0">
-              <p>Showing 1-16 of 18 results</p>
+              <p>
+                Showing {indexOfFirstItem + 1} - 16 of {produtos.length} results
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-6">
             <p className="text-2x0">Show</p>
-            <p className="text-2x0 py-4 px-5 bg-white text-[#9F9F9F]">16</p>
+            <p className="text-2x0 py-4 px-5 bg-white text-[#9F9F9F]">
+              {itemsPerPage}
+            </p>
             <p className="text-2x0">Short by</p>
             <p className="text-2x0 bg-white text-[#9F9F9F] pl-6 pr-20 py-4">
               Default
@@ -95,7 +69,7 @@ export function Shop() {
 
       <div className="products">
         <div className="c_products grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mr-10 ml-10 mt-12 mb-12">
-        {produtos.concat(produtos).map((produto, index) => (
+          {currentItems.map((produto, index) => (
             <Produto
               key={index}
               imageUrl={produto.imageUrl}
@@ -105,6 +79,34 @@ export function Shop() {
             />
           ))}
         </div>
+      </div>
+
+      <div className="flex justify-center gap-4 mb-12">
+        <div className="flex items-center gap-2">
+          {Array.from(
+            { length: Math.ceil(produtos.length / itemsPerPage) },
+            (_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`px-4 py-2 rounded ${
+                  currentPage === index + 1
+                    ? "bg-[#B88E2F] text-white"
+                    : "bg-gray-300 text-gray-600"
+                }`}
+              >
+                {index + 1}
+              </button>
+            )
+          )}
+        </div>
+        <button
+          onClick={nextPage}
+          disabled={currentPage === Math.ceil(produtos.length / itemsPerPage)}
+          className="bg-gray-300 text-gray-600 px-4 py-2 rounded"
+        >
+          Next
+        </button>
       </div>
 
       <Footer />
