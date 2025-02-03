@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Footer } from "../../components/Footer/Footer";
+import Produto from "../../components/Produto/produto";
+
 import background from "../../assets/Group 78.svg";
 import nav from "../../assets/Group 57.svg";
 import nav2 from "../../assets/bi_view-list.svg";
 import nav3 from "../../assets/ci_grid-big-round.svg";
-import "../../index.css";
 import imgP from "../../assets/image 4.svg";
-import Produto from "../../components/Produto/produto";
+
+import "../../index.css";
 
 interface Produto1 {
   imageCardName: string;
@@ -17,9 +19,9 @@ interface Produto1 {
 }
 
 const produtos: Produto1[] = Array.from({ length: 20 }, (_, index) => ({
-  imageCardName: `Prod ${index + 1}`,
-  imageCardDescription: `Desc ${index + 1}`,
-  imageCardPrice: 20 + (index % 5) * 5,
+  imageCardName: `Syltherine`,
+  imageCardDescription: `Stylish cafe chair`,
+  imageCardPrice: 1000 + (index * 1000),
   imageUrl: imgP,
 }));
 
@@ -39,27 +41,27 @@ export function Shop() {
 
   return (
     <div>
-      <img className="w-12/12 object-cover " src={background} alt="" />
+      <img className="w-full object-cover" src={background} alt="" />
 
       <div className="bg-[#F9F1E7] w-full h-32">
         <div className="flex justify-between py-9 px-32 items-center">
           <div className="flex items-center gap-6">
-            <img src={nav} />
-            <img src={nav2} />
-            <img src={nav3} />
+            <img src={nav} alt="Navigation" />
+            <img src={nav2} alt="View List" />
+            <img src={nav3} alt="Grid View" />
 
-            <div className="border-l border-solid pl-11 ml-5 text-2x0">
+            <div className="border-l border-solid pl-11 ml-5 text-2x0 mb-4">
               <p>
                 Showing {indexOfFirstItem + 1} - 16 of {produtos.length} results
               </p>
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <p className="text-2x0">Show</p>
+            <p className="text-2x0 mb-4">Show</p>
             <p className="text-2x0 py-4 px-5 bg-white text-[#9F9F9F]">
               {itemsPerPage}
             </p>
-            <p className="text-2x0">Short by</p>
+            <p className="text-2x0 mb-4">Sort by</p>
             <p className="text-2x0 bg-white text-[#9F9F9F] pl-6 pr-20 py-4">
               Default
             </p>
