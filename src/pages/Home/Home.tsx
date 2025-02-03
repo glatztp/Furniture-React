@@ -14,7 +14,6 @@ interface Produto1 {
   imageCardDescription: string;
   imageCardPrice: number;
   imageUrl: string;
-  BeforePrice?: number;
 }
 
 interface Type {
@@ -86,10 +85,10 @@ export const Home = () => {
       <div className={style.Homecard}>
         <p>New Arrival</p>
         <h1 className={style.titleCard}>Discover Our New Collection</h1>
-        <h5>
+        <h6>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
           tellus, luctus nec ullamcorper mattis.
-        </h5>
+        </h6>
 
         <div className={style.buttonHome}>
           <button type="button">

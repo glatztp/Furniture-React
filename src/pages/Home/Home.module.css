@@ -18,27 +18,31 @@
 .Homecard {
   background-color: var(--pink);
   padding: 1.5rem 2rem 0rem 3rem;
-  width: 28rem;
-  height: auto;
+  width: 35rem;
   border-radius: 1rem;
   position: absolute;
   top: 50%;
   right: 4%;
   transform: translateY(-40%);
-  min-height: 26rem;
+  min-height: 25rem;
+  margin-top: 2rem;
 }
 
 .titleCard {
   color: var(--brown);
   font-size: 3.125rem;
   font-weight: 700;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
 }
 
 .buttonHome {
   background-color: var(--brown);
   padding: 1rem;
-  width: 30%;
+  width: 40%;
   text-transform: uppercase;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 button {
@@ -126,4 +130,8 @@ button a {
 
 .imageCard {
   margin: -2.3rem;
+}
+
+p{
+  padding-top: 1rem;
 }
