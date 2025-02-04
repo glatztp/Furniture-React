@@ -10,6 +10,16 @@ import imgP from "../../assets/image 4.svg";
 
 import "../../index.css";
 
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/Shadcn/ui/pagination";
+
 interface Produto1 {
   imageCardName: string;
   imageCardDescription: string;
@@ -21,7 +31,7 @@ interface Produto1 {
 const produtos: Produto1[] = Array.from({ length: 20 }, (_, index) => ({
   imageCardName: `Syltherine`,
   imageCardDescription: `Stylish cafe chair`,
-  imageCardPrice: 1000 + (index * 1000),
+  imageCardPrice: 1000 + index * 1000,
   imageUrl: imgP,
 }));
 
@@ -33,10 +43,10 @@ export function Shop() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = produtos.slice(indexOfFirstItem, indexOfLastItem);
 
-  const nextPage = () => {
-    if (currentPage < Math.ceil(produtos.length / itemsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
+  const totalPages = Math.ceil(produtos.length / itemsPerPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -83,34 +93,52 @@ export function Shop() {
         </div>
       </div>
 
-      <div className="flex justify-center gap-4 mb-12">
-        <div className="flex items-center gap-2">
-          {Array.from(
-            { length: Math.ceil(produtos.length / itemsPerPage) },
-            (_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentPage(index + 1)}
-                className={`px-4 py-2 rounded ${
-                  currentPage === index + 1
-                    ? "bg-[#B88E2F] text-white"
-                    : "bg-gray-300 text-gray-600"
-                }`}
-              >
-                {index + 1}
-              </button>
-            )
-          )}
-        </div>
-        <button
-          onClick={nextPage}
-          disabled={currentPage === Math.ceil(produtos.length / itemsPerPage)}
-          className="bg-gray-300 text-gray-600 px-4 py-2 rounded"
-        >
-          Next
-        </button>
-      </div>
+      <div className="flex justify-center my-10 pl-52">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (currentPage > 1) handlePageChange(currentPage - 1);
+                }}
+                className="-mr-5 opacity-30"
+              />
+            </PaginationItem>
 
+            {Array.from({ length: totalPages }, (_, index) => (
+              <PaginationItem key={index}>
+                <PaginationLink
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handlePageChange(index + 1);
+                  }}
+                  className={
+                    currentPage === index + 1
+                      ? ' text-white  bg-brown text-2x0' 
+                      : 'text-2x0  text-black bg-[#F9F1E7]'
+                  }
+                >
+                  {index + 1}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+
+            <PaginationItem>
+              <PaginationNext
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (currentPage < totalPages) handlePageChange(currentPage + 1);
+                }}
+                className="-ml-0"
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
       <Footer />
     </div>
   );
