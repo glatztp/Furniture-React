@@ -7,6 +7,7 @@ import nav from "../../assets/Group 57.svg";
 import nav2 from "../../assets/bi_view-list.svg";
 import nav3 from "../../assets/ci_grid-big-round.svg";
 import imgP from "../../assets/image 4.svg";
+import { ButtonBase } from "../../../node_modules/shadcn-components/src/components/ui/ButtonBase";
 
 import "../../index.css";
 
@@ -67,6 +68,7 @@ export function Shop() {
           </div>
           <div className="flex items-center gap-6">
             <p className="text-2x0 mb-4">Show</p>
+            <ButtonBase>efefesfesfs</ButtonBase>
             <p className="text-2x0 py-4 px-5 bg-white text-[#9F9F9F]">
               {itemsPerPage}
             </p>
@@ -116,8 +118,8 @@ export function Shop() {
                   }}
                   className={
                     currentPage === index + 1
-                      ? ' text-white  bg-brown text-2x0' 
-                      : 'text-2x0  text-black bg-[#F9F1E7]'
+                      ? " text-white  bg-brown text-2x0"
+                      : "text-2x0  text-black bg-[#F9F1E7]"
                   }
                 >
                   {index + 1}
@@ -130,7 +132,8 @@ export function Shop() {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (currentPage < totalPages) handlePageChange(currentPage + 1);
+                  if (currentPage < totalPages)
+                    handlePageChange(currentPage + 1);
                 }}
                 className="-ml-0"
               />

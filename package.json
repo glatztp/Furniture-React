@@ -17,8 +17,11 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.3",
+    "shadcn-components": "github:GustavoKobielski/shadcn-components-malwee",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@malwee/react-components": "git+ssh://git@github.com/grupomalwee/react-components.git"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -38,6 +41,6 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.11"
+    "vite": "^6.2.0"
   }
 }
